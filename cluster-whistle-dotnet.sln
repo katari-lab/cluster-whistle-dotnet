@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26124.0
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7CB86285-E0AB-435B-BA34-2B007D113826}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "whistle.api", "src\whistle.api\whistle.api.csproj", "{3F15482A-08A7-4924-A807-EAB74C9B28DE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F15482A-08A7-4924-A807-EAB74C9B28DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F15482A-08A7-4924-A807-EAB74C9B28DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F15482A-08A7-4924-A807-EAB74C9B28DE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3F15482A-08A7-4924-A807-EAB74C9B28DE}.Debug|x64.Build.0 = Debug|Any CPU
+		{3F15482A-08A7-4924-A807-EAB74C9B28DE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3F15482A-08A7-4924-A807-EAB74C9B28DE}.Debug|x86.Build.0 = Debug|Any CPU
+		{3F15482A-08A7-4924-A807-EAB74C9B28DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F15482A-08A7-4924-A807-EAB74C9B28DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F15482A-08A7-4924-A807-EAB74C9B28DE}.Release|x64.ActiveCfg = Release|Any CPU
+		{3F15482A-08A7-4924-A807-EAB74C9B28DE}.Release|x64.Build.0 = Release|Any CPU
+		{3F15482A-08A7-4924-A807-EAB74C9B28DE}.Release|x86.ActiveCfg = Release|Any CPU
+		{3F15482A-08A7-4924-A807-EAB74C9B28DE}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3F15482A-08A7-4924-A807-EAB74C9B28DE} = {7CB86285-E0AB-435B-BA34-2B007D113826}
+	EndGlobalSection
+EndGlobal
