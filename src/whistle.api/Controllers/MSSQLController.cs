@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Data.SqlClient;
 using Microsoft.Data.SqlClient;
+using Microsoft.AspNetCore.Http;
 
 namespace whistle.api.Controllers
 {
@@ -32,7 +33,7 @@ namespace whistle.api.Controllers
                 });
             }
             catch(Exception ex){
-                return this.StatusCode(500, new {
+                return this.StatusCode(StatusCodes.Status400BadRequest, new {
                     cs = cs,
                     e = ex.Message
                 });
