@@ -33,9 +33,10 @@ namespace whistle.api
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                
             }
 
+            app.UseDeveloperExceptionPage();
             //app.UseHttpsRedirection();
 
             app.UseRouting();

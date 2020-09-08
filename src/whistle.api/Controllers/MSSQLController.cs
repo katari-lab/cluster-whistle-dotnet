@@ -22,24 +22,21 @@ namespace whistle.api.Controllers
         [HttpGet("connect")]
         public IActionResult Connect([FromQuery]string cs)
         {   
-            SqlConnectionStringBuilder sb = new SqlConnectionStringBuilder(cs);             
+            
             SqlConnection con = null;
             try
             {
+                SqlConnectionStringBuilder sb = new SqlConnectionStringBuilder(cs);             
                 con = new SqlConnection(sb.ConnectionString);
                 con.Open(); 
                 return this.Ok(new {
                     cs = cs
                 });
-            }
-            catch(Exception ex){
-                return this.StatusCode(StatusCodes.Status400BadRequest, new {
-                    cs = cs,
-                    e = ex.Message
-                });
-            }
+            }            
             finally{
-                con.Close();
+                if (con != null){
+                    con.Close();
+                }                
             }         
         }
     }
