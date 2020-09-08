@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 
 namespace whistle.api.Controllers
 {
@@ -11,18 +13,33 @@ namespace whistle.api.Controllers
     [Route("sql")]
     public class MSSQLController : ControllerBase
     {
-        [HttpGet("connect")]
-        public IEnumerable<WeatherForecast> Connect()
+        [HttpGet()]
+        public IActionResult get()
         {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
+            return this.Ok(new { cs= "test" });
         }
-
+        [HttpGet("connect")]
+        public IActionResult Connect([FromQuery]string cs)
+        {   
+            SqlConnectionStringBuilder sb = new SqlConnectionStringBuilder(cs);             
+            SqlConnection con = null;
+            try
+            {
+                con = new SqlConnection(sb.ConnectionString);
+                con.Open(); 
+                return this.Ok(new {
+                    cs = cs
+                });
+            }
+            catch(Exception ex){
+                return this.StatusCode(500, new {
+                    cs = cs,
+                    e = ex.Message
+                });
+            }
+            finally{
+                con.Close();
+            }         
+        }
     }
 }
